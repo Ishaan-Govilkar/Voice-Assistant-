@@ -22,16 +22,16 @@ from bs4 import BeautifulSoup
 import win32com.client as wincl
 from urllib.request import urlopen
 from AppOpener import open
-
+#--------------------------------------------------------------------------
 engine = pyttsx3.init('sapi5')
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 engine.setProperty('rate', 150)
-
+#--------------------------------------------------------------------------
 def speak(audio):
 	engine.say(audio)
 	engine.runAndWait()
-
+#--------------------------------------------------------------------------
 def wishMe():
 	hour = int(datetime.datetime.now().hour)
 	if hour>= 0 and hour<12:
@@ -42,19 +42,19 @@ def wishMe():
 
 	else:
 		speak("Good Evening Sir !")
-
+#--------------------------------------------------------------------------
 	assisname = "Zendroid"
 	speak("I am your Assistant")
 	#speak(assisname)
 	#speak("I am your personal assistant that is ready to help you do anything, browse the web, show you photos etcetra. I am happy to help the Genz ee, hence my name Zendroid. You may also call me Zen.")
 	
-
+#--------------------------------------------------------------------------
 def uname():
 	uname = "ishaaan"
 	print("Welcome Mr.", uname)
 	speak("Welcome mister ishaaan")
 	speak("How can i Help you, Sir")
-
+#--------------------------------------------------------------------------
 def takeCommand():
 	
 	r = sr.Recognizer()
@@ -337,3 +337,4 @@ if __name__ == '__main__':
 				speak (next(res.results).text)
 			except StopIteration:
 				print ("No results")
+#--------------------------------------------------------------------------
